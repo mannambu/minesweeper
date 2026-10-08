@@ -1,0 +1,54 @@
+Minesweeper validation - 7 October 2026
+Python: 3.11.7 (main, Dec  7 2023, 09:09:57)  [GCC UCRT 13.2.0 64 bit (AMD64)]
+
+COMMAND: python -m unittest discover -s tests -v
+test_bfs_matches_independent_region_oracle (test_engine.BoardTests.test_bfs_matches_independent_region_oracle) ... ok
+test_cannot_flag_revealed_cell (test_engine.BoardTests.test_cannot_flag_revealed_cell) ... ok
+test_corner_edge_and_interior_neighbors (test_engine.BoardTests.test_corner_edge_and_interior_neighbors) ... ok
+test_dense_board_protects_first_cell_only (test_engine.BoardTests.test_dense_board_protects_first_cell_only) ... ok
+test_first_click_and_ring_safe_across_presets (test_engine.BoardTests.test_first_click_and_ring_safe_across_presets) ... ok
+test_flags_alone_do_not_win (test_engine.BoardTests.test_flags_alone_do_not_win) ... ok
+test_invalid_dimensions_and_mine_counts (test_engine.BoardTests.test_invalid_dimensions_and_mine_counts) ... ok
+test_mine_ends_game_and_locks_input (test_engine.BoardTests.test_mine_ends_game_and_locks_input) ... ok
+test_mines_are_placed_on_first_open_not_on_flag (test_engine.BoardTests.test_mines_are_placed_on_first_open_not_on_flag) ... ok
+test_mines_only_exposed_to_gui_after_finish (test_engine.BoardTests.test_mines_only_exposed_to_gui_after_finish) ... ok
+test_open_number_does_not_expand (test_engine.BoardTests.test_open_number_does_not_expand) ... ok
+test_out_of_range_inputs_rejected (test_engine.BoardTests.test_out_of_range_inputs_rejected) ... ok
+test_safe_flag_blocks_flood_until_removed (test_engine.BoardTests.test_safe_flag_blocks_flood_until_removed) ... ok
+test_seed_is_reproducible_with_same_first_cell (test_engine.BoardTests.test_seed_is_reproducible_with_same_first_cell) ... ok
+test_snapshot_has_no_hidden_values (test_engine.BoardTests.test_snapshot_has_no_hidden_values) ... ok
+test_winning_locks_input (test_engine.BoardTests.test_winning_locks_input) ... ok
+test_zero_expands_and_opens_boundary (test_engine.BoardTests.test_zero_expands_and_opens_boundary) ... ok
+test_all_flagged_before_start (test_hints.HintTests.test_all_flagged_before_start) ... ok
+test_deductions_propagate_between_constraints (test_hints.HintTests.test_deductions_propagate_between_constraints) ... ok
+test_finished_game_has_no_hint (test_hints.HintTests.test_finished_game_has_no_hint) ... ok
+test_first_hint_avoids_flag (test_hints.HintTests.test_first_hint_avoids_flag) ... ok
+test_first_hint_is_protected_opening (test_hints.HintTests.test_first_hint_is_protected_opening) ... ok
+test_flags_are_not_trusted_as_facts (test_hints.HintTests.test_flags_are_not_trusted_as_facts) ... ok
+test_full_constraint_proves_mines (test_hints.HintTests.test_full_constraint_proves_mines) ... ok
+test_hidden_layout_does_not_change_hint (test_hints.HintTests.test_hidden_layout_does_not_change_hint) ... ok
+test_inconsistent_constraints_rejected (test_hints.HintTests.test_inconsistent_constraints_rejected) ... ok
+test_proven_safe_flag_is_removed (test_hints.HintTests.test_proven_safe_flag_is_removed) ... ok
+test_soundness_for_all_small_board_observations (test_hints.HintTests.test_soundness_for_all_small_board_observations) ... ok
+test_subset_difference_proves_mine (test_hints.HintTests.test_subset_difference_proves_mine) ... ok
+test_subset_difference_proves_safe (test_hints.HintTests.test_subset_difference_proves_safe) ... ok
+test_uncertain_position_is_labeled_guess (test_hints.HintTests.test_uncertain_position_is_labeled_guess) ... ok
+test_zero_constraint_proves_safe (test_hints.HintTests.test_zero_constraint_proves_safe) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.215s
+
+OK
+Exit code: 0
+
+COMMAND: python gui_smoke.py
+PASS: 5x5 controls, hint, first move, layout
+PASS: 9x9 controls, hint, first move, layout
+PASS: 16x16 controls, hint, first move, layout
+PASS: uncertain hint label and full explanation layout
+PASS: safe flag correction and victory
+PASS: loss, input lock, and reset
+Tk window requested size: 842x871
+Exit code: 0
+
+GUI checks ran on the installed MSYS2 Python/Tk. Native desktop capture could not see the isolated test window; pixel-level GUI review was not completed.
