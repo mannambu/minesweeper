@@ -42,7 +42,7 @@ on the development computer also passed the GUI integration checks.
 For a repeatable demo:
 
 ```text
-python main.py --level 9 --seed 42
+python main.py
 ```
 
 Use the same first click to reproduce a board. With `--seed`, New game repeats
@@ -61,19 +61,6 @@ BFS does not choose the next safe move. It expands already-known empty regions.
 The separate hint engine reasons from the visible numbers and total mine count.
 It never receives hidden mine positions and does not assume player flags are true.
 
-## Verify
-
-```text
-python -m unittest discover -s tests -v
-python gui_smoke.py
-```
-
-The first command runs 32 tests, including all 4,608 combinations of a two-mine
-3 x 3 layout and its revealed safe-cell subsets. It also checks BFS against an
-independent region oracle for 252 starting positions. The GUI check needs a
-graphical desktop and exercises the actual Tk callbacks and widget sizes.
-Recorded results are in `validation.txt`.
-
 ## Files
 
 | File | Purpose |
@@ -82,8 +69,7 @@ Recorded results are in `validation.txt`.
 | `run.bat` | Windows launcher |
 | `tests/` | Automated rule and hint tests |
 | `gui_smoke.py` | Optional Tk integration and layout checks |
-| `report.pdf` | Illustrated design and algorithm report |
-| `report.md`, `team.json`, `build_report.py` | Editable report and PDF builder |
+| `Report.pdf` | Illustrated design and algorithm report |
 | `validation.txt` | Recorded test results |
 
 ## A short presentation demo
